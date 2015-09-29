@@ -1,0 +1,99 @@
+COMANDOS GIT
+
+Adicionar conteudo local para o repositorio remoto
+	git remote add origin http://github.com/user/repo.git
+
+Enviar informações para servidor remoto (pode criar novo branch assim)
+	git push branch-para-onde-vai(origin) branch-que-vai
+
+Clonar repositorio
+	git clone url-repo [nome-diretorio]
+
+Verificar se está sincronizado
+	git pull
+
+Pegar as alterações do repositorio remoto para local
+	git pull origin master
+
+
+--------------- COMMIT ---------------
+
+Commit local com mensagem
+	git commit -m 'Resumo do commit'
+
+Commit local com descrição (abrir editor de texto)
+	git commit
+
+Commit local para adicionar automaticamente todos os arquivos não adicionados
+	git commit -a -m "Resumo do commit"
+
+Retornar arquivo da lista de stagging para untracked
+	git reset HEAD nomedoarquivo
+
+Voltar X commits atrás
+	git reset HEAD~1
+	
+Voltar X commits atrás e mantém as modificações nos arquivos para commits 
+	git reset HEAD~1 --soft
+	
+Voltar X commits atrás e remove as modificações nos arquivos dos commits 
+	git reset HEAD~1 --hard
+	
+	
+--------------- LOG ---------------
+
+Normal
+	git log
+
+Mostrar mudanças/alterações de todos
+	git log -p
+	
+Mostrar mudanças/alterações dos X ultimos commits
+	git log -p -2
+
+Mostrar estatísticas (mudanças, inserções, deletes) 
+	git log --stat	
+
+Resumir em uma linha
+	git log --pretty=oneline
+
+Resumir commits (hash, nome, quanto tempo atras : descrição)
+	git log --pretty=format:"%h - %an, %ar : %s"
+	
+Mostrar log de X dias atras ( weeks também funciona)
+	git log --since=2.days
+	
+--------------- CHECKOUT ---------------
+
+Definir versão de trabalho
+	git checkout hashdaversão
+
+Voltar para versão master
+	git checkout master
+	
+Revemo modificações no arquivo
+	git checkout --arquivo
+
+--------------- BRANCH---------------
+
+Ver branchs locais/atual
+	git branch
+
+Ver branchs locais/atual + remotos
+	git branch [-a]
+
+Cria novo branch a partir do atual ou do remoto
+	git checkout -b nomedobranch [a-partir-de-branch-remoto]
+
+
+Merge para o branch atual
+	git merge branchparajuntar
+
+Remover branch
+	git branch -D nome-do-branch
+
+--------------- IGNORE ---------------
+
+arquivo .gitignore
+adicionar nome dos arquivos a ignorar linha a linha
+
