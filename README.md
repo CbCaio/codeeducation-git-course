@@ -15,3 +15,35 @@
   1. git tag 0.1.0
   2. git push origin master --tags
   3. fazer novos commits e criar outra release
+
+### Habilitar conexão por ssh (git-bash):
+
+Comando para gerar chave:
+```
+ssh-keygen -t rsa -b 4096 -C "email"
+```
+
+Ativando ssh-agent
+```
+eval `ssh-agent -s`
+```
+
+Adicionando chave ao ssh-agent:
+```
+ssh-add ~/.ssh/id_rsa
+```
+
+Testando conexão com o github:
+```
+ssh -T git@github.com
+```
+
+Se tudo correr bem, agora apenas é necessário adiciona-la ao perfil do github, para copiar a chave para o clipboard:
+```
+clip < ~/.ssh/id_rsa.pub
+```
+
+>Importante: Lembrar de garantir que a conexão com o repositório remoto esteja sendo feita através do ssh
+```
+git remote set-url origin git@github.com:user/repository.git
+```
