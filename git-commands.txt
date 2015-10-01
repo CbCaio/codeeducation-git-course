@@ -1,7 +1,22 @@
 COMANDOS GIT
 
+--------------- INIT ---------------
+
+Iniciar novo repositorio
+	git init
+
+Iniciar repo bare
+	git init --bare
+
+--------------- PUSH/PULL ---------------
+
 Adicionar conteudo local para o repositorio remoto
 	git remote add origin http://github.com/user/repo.git
+
+Adicionar conteudo para o repositorio local
+	git remote add local shh://localhost/caminho/pasta.git
+
+Enviar informações para servidor local	git push local master
 
 Enviar informações para servidor remoto (pode criar novo branch assim)
 	git push branch-para-onde-vai(origin) branch-que-vai
@@ -15,6 +30,20 @@ Verificar se está sincronizado
 Pegar as alterações do repositorio remoto para local
 	git pull origin master
 
+--------------- TAGS ---------------
+
+Criar tag
+	git tag nome-tag-0.0.0.0.0
+
+Mostrar tags
+	git tag -l
+
+Enviar tags para repositorio
+	git push origin master --tags
+
+Remover tags
+	git tag -d 0.1.0  (removendo tag localmente)
+	git push origin :refs/tags/0.1.0 (removendo tag no repositório remoto)
 
 --------------- COMMIT ---------------
 
@@ -38,7 +67,6 @@ Voltar X commits atrás e mantém as modificações nos arquivos para commits
 	
 Voltar X commits atrás e remove as modificações nos arquivos dos commits 
 	git reset HEAD~1 --hard
-	
 	
 --------------- LOG ---------------
 
