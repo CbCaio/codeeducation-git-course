@@ -12,6 +12,6 @@
   8. git push origin master
 
 ### Segunda atividade - Releases:
-  1- git tag 0.1.0
-  2- git push origin master --tags
-  3- fazer novos commits e criar outra release
+  1. git tag 0.1.0
+  2. git push origin master --tags
+  3. fazer novos commits e criar outra release
