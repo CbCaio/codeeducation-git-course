@@ -16,18 +16,18 @@ Adicionar conteudo local para o repositorio remoto
 Adicionar conteudo para o repositorio local
 	git remote add local shh://localhost/caminho/pasta.git
 
-Enviar informações para servidor local	git push local master
+Enviar informaÃ§Ãµes para servidor local	git push local master
 
-Enviar informações para servidor remoto (pode criar novo branch assim)
+Enviar informaÃ§Ãµes para servidor remoto (pode criar novo branch assim)
 	git push branch-para-onde-vai(origin) branch-que-vai
 
 Clonar repositorio
 	git clone url-repo [nome-diretorio]
 
-Verificar se está sincronizado
+Verificar se estÃ¡ sincronizado
 	git pull
 
-Pegar as alterações do repositorio remoto para local
+Pegar as alteraÃ§Ãµes do repositorio remoto para local
 	git pull origin master
 
 --------------- TAGS ---------------
@@ -43,29 +43,29 @@ Enviar tags para repositorio
 
 Remover tags
 	git tag -d 0.1.0  (removendo tag localmente)
-	git push origin :refs/tags/0.1.0 (removendo tag no repositório remoto)
+	git push origin :refs/tags/0.1.0 (removendo tag no repositÃ³rio remoto)
 
 --------------- COMMIT ---------------
 
 Commit local com mensagem
 	git commit -m 'Resumo do commit'
 
-Commit local com descrição (abrir editor de texto)
+Commit local com descriÃ§Ã£o (abrir editor de texto)
 	git commit
 
-Commit local para adicionar automaticamente todos os arquivos não adicionados
+Commit local para adicionar automaticamente todos os arquivos nÃ£o adicionados
 	git commit -a -m "Resumo do commit"
 
 Retornar arquivo da lista de stagging para untracked
 	git reset HEAD nomedoarquivo
 
-Voltar X commits atrás
+Voltar X commits atrÃ¡s
 	git reset HEAD~1
 	
-Voltar X commits atrás e mantém as modificações nos arquivos para commits 
+Voltar X commits atrÃ¡s e mantÃ©m as modificaÃ§Ãµes nos arquivos para commits 
 	git reset HEAD~1 --soft
 	
-Voltar X commits atrás e remove as modificações nos arquivos dos commits 
+Voltar X commits atrÃ¡s e remove as modificaÃ§Ãµes nos arquivos dos commits 
 	git reset HEAD~1 --hard
 	
 --------------- LOG ---------------
@@ -73,33 +73,33 @@ Voltar X commits atrás e remove as modificações nos arquivos dos commits
 Normal
 	git log
 
-Mostrar mudanças/alterações de todos
+Mostrar mudanÃ§as/alteraÃ§Ãµes de todos
 	git log -p
 	
-Mostrar mudanças/alterações dos X ultimos commits
+Mostrar mudanÃ§as/alteraÃ§Ãµes dos X ultimos commits
 	git log -p -2
 
-Mostrar estatísticas (mudanças, inserções, deletes) 
+Mostrar estatÃ­sticas (mudanÃ§as, inserÃ§Ãµes, deletes) 
 	git log --stat	
 
 Resumir em uma linha
 	git log --pretty=oneline
 
-Resumir commits (hash, nome, quanto tempo atras : descrição)
+Resumir commits (hash, nome, quanto tempo atras : descriÃ§Ã£o)
 	git log --pretty=format:"%h - %an, %ar : %s"
 	
-Mostrar log de X dias atras ( weeks também funciona)
+Mostrar log de X dias atras ( weeks tambÃ©m funciona)
 	git log --since=2.days
 	
 --------------- CHECKOUT ---------------
 
-Definir versão de trabalho
-	git checkout hashdaversão
+Definir versÃ£o de trabalho
+	git checkout hashdaversÃ£o
 
-Voltar para versão master
+Voltar para versÃ£o master
 	git checkout master
 	
-Revemo modificações no arquivo
+Revemo modificaÃ§Ãµes no arquivo
 	git checkout --arquivo
 
 --------------- BRANCH---------------
@@ -125,3 +125,29 @@ Remover branch
 arquivo .gitignore
 adicionar nome dos arquivos a ignorar linha a linha
 
+--------------- DELETING OLD COMMITS ---------------
+Deleting the .git folder may cause problems in your git repository. If you want to delete all your commit history but keep the code in its current state, it is very safe to do it as in the following:
+
+1. Checkout
+
+git checkout --orphan latest_branch
+
+2. Add all the files
+
+git add -A
+
+3. Commit the changes
+
+git commit -am "commit message"
+
+4. Delete the branch
+
+git branch -D master
+
+5. Rename the current branch to master
+
+git branch -m master
+
+6. Finally, force update your repository
+
+git push -f origin master
